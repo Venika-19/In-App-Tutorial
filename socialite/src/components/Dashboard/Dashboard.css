@@ -1,0 +1,166 @@
+.authenticate-nav{
+	margin: 2rem;
+}
+
+.a-nav-right{
+	text-align: right;
+}
+
+.a-nav-right a{
+	display: inline-block;
+	text-align: right;
+	margin: 1rem;
+}
+.rounded{
+	padding: 0.4rem 1.5rem;
+	border-radius: 25px !important;
+	background-color: rgba(0,204,187, 0.5);
+	border-style: none;
+}
+
+.rounded:hover{
+	background-color: rgba(0,204,187, 0.9);
+}
+
+.wall{
+	margin: 5rem 0;
+}
+
+input{
+	width: 100%;
+	border-radius: 10px;
+	padding: 1rem; 
+	background-color: #3a4750;
+	color: #00adb5;
+}
+
+.feature{
+	position: relative;
+	background-color: rgba(0, 0, 0, .2);
+	border-radius: 10px;
+	padding: 0 1rem;
+	height: auto;
+	text-align: center;
+	color: #00adb5;
+	margin-top: 1rem;
+}
+
+.feature:hover{
+	background-color: #3a4750;
+	cursor: pointer;
+}
+
+.feature-icon{
+	position: absolute;
+}
+
+.feature img{
+	opacity: 0.7;
+	width: 95%;
+	max-width: 250px;
+	object-fit: cover;
+	max-height: 250px;
+}
+
+.feature img:hover{
+	opacity: 0.9;
+}
+
+.feature-content-title{
+	color: white;
+	font-size: 36px;
+	font-weight: 600;
+}
+
+.feature-content-description{
+	line-height: 1.8rem;
+}
+
+.right-sidebar hr{
+	position: fixed;
+	background: white;
+}
+
+.leaderboard{
+	color: white;
+	overflow: hidden;
+}
+
+.popular-post-content{
+	overflow: auto;
+}
+
+.see-more{
+	display: inline-block;
+	color: #f07ab0;
+}
+
+.popular-post{
+	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+	box-shadow: 0 15px 35px 0 rgba(255, 255, 255, 0.2),
+	0 5px 15px rgba(0, 0, 0, 0.06);
+	height: 10rem;
+	border-radius: 25px;
+	transition: all .15s ease;
+	padding: 2rem 1rem;
+	color: black;
+}
+
+.popular-post:hover{
+  box-shadow: 0 18px 35px 0 rgba(255, 255, 255, 0.12),
+    0 8px 15px rgba(0, 0, 0, 0.06);
+  transform: translateY(-5px);
+}
+
+
+
+.top-recommend{
+	background: #C9D6FF;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+	height: 10rem;
+	border-radius: 25px;
+	transition: all .15s ease;
+	padding: 2rem 1rem;
+	color: black;
+}
+
+.top-recommend:hover{
+  box-shadow: 0 18px 35px 0 rgba(255, 255, 255, 0.12),
+    0 8px 15px rgba(0, 0, 0, 0.06);
+  transform: translateY(-5px);
+}
+
+#tutorial-overlay {
+	position: fixed;
+	top: 0;
+	left: 0; 
+	right: 0; 
+	bottom: 0; 
+	background-color: rgba(0, 0, 0, 0.75); 
+	z-index: 10;
+}
+#start-tutorial {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+	padding: 10px 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #eee;
+	color: #333;
+	cursor: pointer;
+	font-size: 16px;
+  }
+  
+#start-tutorial:hover {
+	background-color: #ddd;
+}
+
+@media (max-width: 767px) {
+   .feature img{
+      display: none;
+   }
+}

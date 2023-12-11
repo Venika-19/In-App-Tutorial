@@ -1,0 +1,154 @@
+.display .username{
+  display: inline-block;
+	font-size: 3.5rem;
+  color: white;
+}
+
+.display .email{
+  color: grey;
+}
+
+.display .about-me{
+  color: white;
+}
+
+.display .rating{
+  display: inline-block;
+  background-color: #3797a4;
+  border-radius: 7px;
+}
+
+.display .times-answered{
+  display: inline-block;
+  background-color: #bbbfca;
+  border-radius: 7px;
+  color: black;
+}
+
+.showcase{
+  color: grey;
+}
+
+.about-me img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.top-skill{
+  height: 15rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+}
+
+.top-skill-icon{
+  position: relative;
+}
+
+.top-skill-icon img{
+  position: absolute;
+  height: 180px;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+}
+
+.top-skill-name{
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.social-links i{
+  margin-right: 1rem;
+}
+
+.project-container{
+  height: auto;
+  background-color: black; 
+  transition: all .25s ease;
+}
+
+.project-container:hover{
+  transform: translateY(-8px);
+}
+
+.project-header{
+  height: 7rem;
+}
+
+.project-container i{
+  margin-right: 1rem;
+  color: #f07ab0
+}
+
+.project-title{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.gratitude-point-list{
+  margin-top: 7rem;
+}
+
+.profile-picture img{
+  border-radius: 50%;
+  height: 256px;
+  width: 256px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: grey;
+}
+
+.profile-picture {
+  text-align: center;
+}
+
+.picture-seprator {
+  width: 80%;
+  height: 2px;
+  margin: auto;
+}
+
+.about-me hr{
+  margin-top: -7rem;
+}
+
+.about-me-text {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.social-links {
+  margin-top: .5rem;
+}
+
+.social-links .fa-2x {
+  color: grey;  
+}
+
+.social-links .fa-2x:hover {
+  opacity: .5;  
+}
+
+.hover-pointer:hover{
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1199px) {
+  
+  .gratitude-point-list{
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .showcase-add {
+    float: none !important;
+  }
+}
