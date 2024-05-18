@@ -64,7 +64,7 @@ function Sidebar(props) {
 			           </a>
 			        </li>
 			        <li>
-			           <a className="s-sidebar__nav-link" href="/blog">
+			           <a className="s-sidebar__nav-link_blog" href="/blog">
 			              <i><FontAwesomeIcon icon={faNewspaper} /></i><em>Blogs</em>
 			           </a>
 			        </li>

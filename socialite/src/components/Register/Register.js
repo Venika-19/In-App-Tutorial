@@ -8,7 +8,7 @@ import {useSpring, animated} from 'react-spring'
 import { useForm } from '../../util/hooks';
 import Swal from 'sweetalert2';
 
-const options = [{label: 'UG2k20', value: 1, area: 'UG2k20'},{label: 'UG2k19',value:2, area: 'UG2k20'},{label: 'UG2k18',value:3, area: 'UG2k20'},{label: 'UG2k17',value:4, area: 'UG2k20'},{label: 'UG2k16',value:5, area: 'UG2k20'},{label: 'PG2k20',value:6, area: 'UG2k20'},{label: 'PG2k19',value:7, area: 'UG2k20'},{label: 'Alumni',value:8, area: 'UG2k20'}]
+const options = [{label: 'UG2k20', value: 1, area: 'UG2k20'},{label: 'UG2k19',value:2, area: 'UG2k20'},{label: 'UG2k21',value:3, area: 'UG2k20'},{label: 'UG2k22',value:4, area: 'UG2k20'},{label: 'UG2k23',value:5, area: 'UG2k20'},{label: 'PG2k20',value:6, area: 'UG2k20'},{label: 'PG2k19',value:7, area: 'UG2k20'},{label: 'Alumni',value:8, area: 'UG2k20'}]
 const options2 = [{label: 'CSE', value: 1, area: 'UG2k20'},{label: 'CSD',value:2, area: 'UG2k20'},{label: 'ECE',value:3, area: 'UG2k20'},{label: 'ECD',value:4, area: 'UG2k20'},{label: 'CLD',value:5, area: 'UG2k20'},{label: 'CND',value:6, area: 'UG2k20'},{label: 'CHD',value:7, area: 'UG2k20'},{label: 'LCD',value:8, area: 'UG2k20'},{label: 'LED',value:9, area: 'UG2k20'},{label: 'CSIS',value:10, area: 'UG2k20'},{label: 'CASE',value:11, area: 'UG2k20'},{label: 'CE',value:12, area: 'UG2k20'},{label: 'CL',value:13, area: 'UG2k20'}]
 
 const animatedComponents = makeAnimated();

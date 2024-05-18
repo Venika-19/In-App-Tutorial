@@ -1,11 +1,11 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import {useSpring, animated} from 'react-spring';
 import Joyride from 'react-joyride';
-import { useState } from 'react';
-
+import axios from 'axios';
 import "./Dashboard.css"
 
 import Sidebar from "../Sidebar"
@@ -21,14 +21,85 @@ function Dashboard(props){
   const { data: trending_posts } = useQuery(FETCH_TOP_POSTS);
 
   var trending_posts_list = trending_posts ? trending_posts.getTopPosts : "";
-  console.log(trending_posts_list)
-
+ 
   const { data: trending_people } = useQuery(FETCH_TOP_RATED);
 
   var trending_people_list = trending_people ? trending_people.getTopRated : "";
 
-  // State for controlling the tutorial visibility
-  const [runTutorial, setRunTutorial] = useState(false);
+  // // State for controlling the tutorial visibility
+  // const [runTutorial, setRunTutorial] = useState(false);
+  const [runTutorial, setRunTutorial] = useState(() => {
+    // Check if the user has seen the tutorial before (e.g., using localStorage)
+    const hasSeenTutorial = localStorage.getItem('hasSeenTutorial');
+    return !hasSeenTutorial; // Only run if they haven't seen it
+  });
+
+
+  //  // State for click rates
+  //  const [clickRates, setClickRates] = useState({
+  //   next: 0,
+  //   skip: 0,
+  //   back:0
+  //    // Click rate for the Joyride
+  // });
+
+  // useEffect(() => {
+  //   // Load click rates from localStorage on component mount
+  //   const storedClickRates = JSON.parse(localStorage.getItem('clickRates'));
+  //   if (storedClickRates) {
+  //     setClickRates(storedClickRates);
+  //   }
+  // }, []);
+   
+  // // Function to update click rate and localStorage
+  // const updateClickRate = (feature) => {
+  //   const updatedClickRates = { ...clickRates, [feature]: clickRates[feature] + 1 };
+  //   setClickRates(updatedClickRates);
+  //   localStorage.setItem('clickRates', JSON.stringify(updatedClickRates));
+  //   // axios.post('/api/updateClickRates', updatedClickRates)
+  //   // .then(response => {
+  //   //   console.log('Click rates updated successfully in the backend:', response.data);
+  //   // })
+  //   // .catch(error => {
+  //   //   console.error('Error updating click rates in the backend:', error);
+  //   // });
+  //   console.log(clickRates)
+  //   localStorage.removeItem('clickRates');
+  // };
+
+  // // Joyride callback for updating click rate when a step is completed
+  const handleJoyrideCallback = (data) => {
+    console.log("hey", data.action);
+    if (data.action === 'skip'){
+      updateClickRate('skip');
+      console.log("check", data.action);
+
+    }
+    else if(data.action === 'next')
+    {
+      updateClickRate('next');
+    }
+    else if(data.action === 'prev')
+    {
+      updateClickRate('back');
+    }
+
+    if (data.type === 'tour:end') {
+          setRunTutorial(false);
+     }
+
+    
+  };
+
+  // const handleExploreNowClick = () => {
+  //   // Update click rate for the tutorial step
+  //   updateClickRate('exploreNow');
+    
+  //   // Trigger the action corresponding to clicking the "EXPLORE NOW" button
+  //   // You can add your logic here, such as redirecting the user or performing any other action
+  //   console.log('EXPLORE NOW button clicked!');
+  // };
+  
 
   const tutorialSteps = [
     {
@@ -41,15 +112,24 @@ function Dashboard(props){
     },
     {
       target: '.leaderboard',
-      content: 'Here you can see the leading contributers!',
+      content: 'Here you can see the leading contributers in graditure points!',
     },
     {
       target: '.query_feature',
       content: 'Here you can see ask your queries. Click on it to create your first query!',
+      spotlightComponent: (
+        <button className="my-5 rounded btn"> EXPLORE NOW </button>
+      ),
     },
-    
+    {
+      target: '.s-sidebar__nav-link_blog',
+      content: 'Here you can see ask your queries. Click on it to create your first query!',
+    },
+
     // Add more steps as needed
   ];
+
+
 
   function showIssue(postId){
     props.history.push('/issue/'+postId);
@@ -251,11 +331,8 @@ function Dashboard(props){
                 disableOverlayClose={true}
                 disableScrolling={true}
                 spotlightPadding={8}
-                callback={(data) => {
-                  if (data.type === 'tour:end') {
-                    setRunTutorial(false);
-                  }
-                }}
+                callback={handleJoyrideCallback}
+                disableOverlay={false}
               />
 
             </main>
